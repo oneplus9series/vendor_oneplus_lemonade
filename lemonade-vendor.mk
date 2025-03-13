@@ -829,9 +829,9 @@ PRODUCT_PACKAGES += \
     libDeVIS \
     libdehaze \
     libfastov_dsp \
+    libnightvision \
     liblvimfs \
     liblvimfs_wrapper \
-    libnightvision \
     anc.hal \
     android.hardware.secure_element@1.0-impl \
     com.qti.sensor.gc02m1b.lemonade \

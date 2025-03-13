@@ -5624,6 +5624,45 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libnightvision",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/odm/lib/libnightvision.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcdsprpc",
+                "libfastov_dsp",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libnightvision.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcdsprpc",
+                "libfastov_dsp",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "liblvimfs",
     owner: "oneplus",
     strip: {
@@ -5666,32 +5705,6 @@ cc_prebuilt_library_shared {
                 "libc",
                 "libm",
                 "libstdc++_vendor",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libnightvision",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/odm/lib/libnightvision.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcdsprpc",
-                "libfastov_dsp",
-                "libm",
-                "libdl",
-                "libc",
             ],
         },
     },
